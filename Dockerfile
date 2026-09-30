@@ -7,7 +7,7 @@ WORKDIR /app
 # Install dependencies
 FROM base AS deps
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm install --no-audit --no-fund
 
 # Build the app
 FROM base AS builder
